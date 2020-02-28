@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Contents from "./components/Contents";
-  import Slider from "./components/Slider";
+import Slider from "./components/Slider";
 import "./styles/main.css";
 import axios from "axios";
 import dateFormat from "./helpers/dateFormat";
@@ -23,6 +23,7 @@ class App extends Component {
     let data = dataObjects.data;
     //Get current sol (days on Mars)
     let sol_keys = data.sol_keys;
+    console.log(sol_keys);
     let currentSol = sol_keys[sol_keys.length - 1];
     currentData.sol = currentSol;
 
@@ -31,7 +32,7 @@ class App extends Component {
     currentData.season = currentSeason;
 
     //Current Earth Day
-    let currentEarthDay = data[currentSol].First_UTC;
+    let currentEarthDay = data[currentSol].Last_UTC;
     currentData.day = dateFormat(currentEarthDay);
 
     //Get current atmospheric temperature
@@ -40,7 +41,6 @@ class App extends Component {
     currentData.min = Math.round(minTemp);
     let maxTemp = currentAT.mx;
     currentData.max = Math.round(maxTemp);
-
     //6 days before
     pastData = data;
     delete pastData[currentSol];
@@ -55,13 +55,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Slider />
         <Contents current={this.state.currentData} past={this.state.pastData} />
-      <Slider />
-
       </div>
     );
   }
-
 }
 
 export default App;

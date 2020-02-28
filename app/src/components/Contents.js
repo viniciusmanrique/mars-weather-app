@@ -18,7 +18,8 @@ export default function Contents({ current, past }) {
 
     past.sol_keys.map(data => {
       let sol = data;
-      let day = dateFormat(past[data].First_UTC);
+      let day = dateFormat(past[data].Last_UTC);
+      console.log(past[data].First_UTC);
       let min = past[data].AT.mn;
       let max = past[data].AT.mx;
       let content = (
