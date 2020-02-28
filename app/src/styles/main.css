@@ -29,6 +29,13 @@ body {
   src: url("../assets/fonts/RobotoMono-Light.ttf");
 }
 
+.contents {
+  position: absolute;
+  top: 0%;
+  z-index: 1000;
+  color: white;
+}
+
 .contents__container {
   background-color: rgba(31, 27, 27, 0.4);
   padding: 0.75rem 0.5rem;
@@ -53,9 +60,16 @@ body {
 }
 
 .contents__past {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   text-align: center;
-  -webkit-column-count: 2;
-          column-count: 2;
 }
 
 .contents__past--container {
@@ -68,6 +82,8 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 45vw;
+  margin-right: 0.5rem;
 }
 
 .contents__past--container-column .day {
