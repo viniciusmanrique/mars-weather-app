@@ -1,4 +1,8 @@
 .contents {
+  position: absolute;
+  top: 0%;
+  z-index: 1000;
+  color: white;
   &__container {
     background-color: rgba(31, 27, 27, 0.4);
     padding: 0.75rem 0.5rem;
@@ -16,13 +20,17 @@
     }
   }
   &__past {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     text-align: center;
-    column-count: 2;
     &--container {
       background-color: rgba(0, 0, 0, 0.1);
       margin-bottom: 0.5rem;
       display: flex;
       flex-direction: column;
+      width: 45vw;
+      margin-right: 0.5rem;
       &-column {
         .day {
           font-size: 1.15rem;
