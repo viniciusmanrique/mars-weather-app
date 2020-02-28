@@ -4,6 +4,7 @@
     "sources": [
         "main.scss",
         "partials/_contents.scss"
+
     ],
     "names": [],
     "file": "main.css"

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Contents from "./components/Contents";
+  import Slider from "./components/Slider";
 import "./styles/main.css";
 import axios from "axios";
 import dateFormat from "./helpers/dateFormat";
@@ -55,9 +56,12 @@ class App extends Component {
     return (
       <div className="App">
         <Contents current={this.state.currentData} past={this.state.pastData} />
+      <Slider />
+
       </div>
     );
   }
+
 }
 
 export default App;
