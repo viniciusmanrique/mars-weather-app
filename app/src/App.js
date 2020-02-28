@@ -1,5 +1,6 @@
 import React from "react";
 import Slider from "./components/Slider";
+import "./styles/main.css";
 
 function App() {
   return (

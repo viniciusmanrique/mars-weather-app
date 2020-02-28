@@ -1,7 +1,4 @@
-// Libraries
 import React from "react";
-
-// Components
 import HeroSlider, { Slide, OverlayContainer } from "hero-slider";
 
 // Assets
@@ -18,18 +15,20 @@ export default function BasicSlider() {
   return (
     <HeroSlider
       slidingAnimation="left_to_right"
-      orientation="horizontal"
+      orientation="vertical"
       initialSlide={1}
       style={{
-        color: "#FFF"
+        color: "#FFF",
+        margin: 0,
+        padding: 0
       }}
       settings={{
         slidingDuration: 250,
         slidingDelay: 100,
         shouldAutoplay: true,
-        shouldDisplayButtons: true,
-        autoplayDuration: 5000,
-        height: "140vmin"
+        shouldDisplayButtons: false,
+        autoplayDuration: 3000,
+        height: "160vmin"
       }}
     >
       <OverlayContainer
@@ -41,42 +40,35 @@ export default function BasicSlider() {
           width: "100%",
           height: "100%",
           backgroundColor: "rgba(0, 0, 0, 0.33)",
-          textAlign: "center"
+          textAlign: "left"
         }}
-      >
-        <h1>A weather log for Martians.</h1>
-        <h5>Season: Summer</h5>
-        <h2>Sol 445</h2>
-        <h3>February 28</h3>
-        <h3>High:9° F</h3>
-        <h3>Low:-135° F</h3>
-      </OverlayContainer>
+      ></OverlayContainer>
       <Slide
         background={{
           backgroundImage: bg4,
           backgroundAttachment: "fixed",
-          backgroundPosition: "center center"
+          backgroundPosition: "center top"
         }}
       />
       <Slide
         background={{
           backgroundImage: bg1,
           backgroundAttachment: "fixed",
-          backgroundPosition: "center center"
+          backgroundPosition: "center top"
         }}
       />
       <Slide
         background={{
           backgroundImage: bg2,
           backgroundAttachment: "fixed",
-          backgroundPosition: "center center"
+          backgroundPosition: "center top"
         }}
       />
       <Slide
         background={{
           backgroundImage: bg3,
           backgroundAttachment: "fixed",
-          backgroundPosition: "center center"
+          backgroundPosition: "center top"
         }}
       />
     </HeroSlider>
