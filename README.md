@@ -1,1 +1,1 @@
-App description
+A weather log for Martians.
