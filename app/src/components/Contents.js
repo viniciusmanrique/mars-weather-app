@@ -12,8 +12,9 @@ export default function Contents({ current, past }) {
     season = current.season;
     sol = current.sol;
     day = current.day;
-    min = current.min;
-    max = current.max;
+    min = Math.round(current.min);
+    console.log(min);
+    max = Math.round(current.max);
 
     past.sol_keys.map(data => {
       let sol = data;
@@ -27,8 +28,8 @@ export default function Contents({ current, past }) {
             <p className="day">{day}</p>
           </div>
           <div className="contents__past--container-column">
-            <p>High: {max}</p>
-            <p>Low: {min}</p>
+            <p>High: {max}&deg;F</p>
+            <p>Low: {min}&deg;F</p>
           </div>
         </div>
       );
