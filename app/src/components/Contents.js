@@ -43,7 +43,7 @@ export default function Contents({ current, past }) {
     <div className="contents">
       <div className="contents__container">
         <h1>A weather log for Martians.</h1>
-        <h3>{`Season: ${season}`}</h3>
+        <h3 className="contents__season">{`Season: ${season}`}</h3>
       </div>
 
       <div className="contents__current">

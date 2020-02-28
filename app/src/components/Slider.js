@@ -5,7 +5,7 @@ import HeroSlider, { Slide, OverlayContainer } from "hero-slider";
 const bg1 =
   "https://mars.jpl.nasa.gov/msl-raw-images/msss/01000/mcam/1000MR0044630460503606E03_DXXX.jpg";
 const bg2 =
-  "https://mars.jpl.nasa.gov/msl-raw-images/msss/01000/mcam/1000MR0044631270503687E03_DXXX.jpg";
+  "https://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01000/opgs/edr/fcam/FLB_486265257EDR_F0481570FHAZ00323M_.JPG";
 const bg3 =
   "https://mars.jpl.nasa.gov/msl-raw-images/msss/01000/mcam/1000MR0044630970503657E01_DXXX.jpg";
 const bg4 =
@@ -28,7 +28,7 @@ export default function BasicSlider() {
         shouldAutoplay: true,
         shouldDisplayButtons: false,
         autoplayDuration: 3000,
-        height: "120vh"
+        height: "160vh"
       }}
     >
       <OverlayContainer

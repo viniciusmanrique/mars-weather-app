@@ -38,10 +38,12 @@ body {
 
 .contents__container {
   background-color: rgba(31, 27, 27, 0.4);
-  padding: 0.75rem 0.5rem;
+  font-family: oxaniumSemiBold;
+  padding: 0.75rem 2rem;
 }
 
 .contents__current {
+  font-family: robotoMonoBold;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -56,7 +58,12 @@ body {
 }
 
 .contents__current--row #current-day {
+  font-family: robotoMonoLight;
   font-size: 1.25rem;
+}
+
+.contents__season {
+  color: lightgrey;
 }
 
 .contents__past {
@@ -73,6 +80,7 @@ body {
 }
 
 .contents__past--container {
+  font-family: robotoMonoLight;
   background-color: rgba(0, 0, 0, 0.1);
   margin-bottom: 0.5rem;
   display: -webkit-box;
@@ -87,6 +95,9 @@ body {
 }
 
 .contents__past--container-column .day {
+  margin: 0;
+  font-family: robotoMonoBold;
+  color: lightgrey;
   font-size: 1.15rem;
 }
 /*# sourceMappingURL=main.css.map */
