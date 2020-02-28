@@ -1,8 +1,12 @@
 import React from "react";
-import logo from "./logo.svg";
+import Slider from "./components/Slider";
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <Slider />
+    </div>
+  );
 }
 
 export default App;
