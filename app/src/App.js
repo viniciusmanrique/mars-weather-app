@@ -8,13 +8,14 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentSol: null,
-      currentSeason: null,
-      currentEarthDay: null
+      currentData: null,
+      pastData: null
     };
   }
   async componentDidMount() {
     const api_key = "ghJNmFOs0h7dUNTchYuHRb1DHl3Xd5MDtnpDx2aT";
+    let currentData = {};
+    let pastData = [];
     let dataObjects = await axios.get(
       `https://api.nasa.gov/insight_weather/?api_key=${api_key}&feedtype=json&ver=1.0`
     );
@@ -22,23 +23,38 @@ class App extends Component {
     //Get current sol (days on Mars)
     let sol_keys = data.sol_keys;
     let currentSol = sol_keys[sol_keys.length - 1];
+    currentData.sol = currentSol;
+
+    //Current season
     let currentSeason = data[currentSol].Season;
+    currentData.season = currentSeason;
+
+    //Current Earth Day
     let currentEarthDay = data[currentSol].First_UTC;
+    currentData.day = dateFormat(currentEarthDay);
+
+    //Get current atmospheric temperature
+    let currentAT = data[currentSol].AT;
+    let minTemp = currentAT.mn;
+    currentData.min = Math.round(minTemp);
+    let maxTemp = currentAT.mx;
+    currentData.max = Math.round(maxTemp);
+
+    //6 days before
+    pastData = data;
+    delete pastData[currentSol];
+    pastData["sol_keys"].pop();
 
     this.setState({
-      currentSol: currentSol,
-      currentSeason: currentSeason,
-      currentEarthDay: dateFormat(currentEarthDay)
+      currentData: currentData,
+      pastData: pastData
     });
-    console.log(data);
+    console.log(data, currentSol);
   }
   render() {
     return (
       <div className="App">
-        <Contents
-          season={this.state.currentSeason}
-          sol={this.state.currentSol}
-        />
+        <Contents current={this.state.currentData} past={this.state.pastData} />
       </div>
     );
   }
