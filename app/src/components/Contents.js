@@ -2,8 +2,9 @@ import React from "react";
 import dateFormat from "../helpers/dateFormat";
 
 export default function Contents({ current, past }) {
-  console.log(past);
+  let contents = [];
   let season, sol, day, min, max;
+
   if (current === null) {
     current = {};
     past = {};
@@ -17,17 +18,22 @@ export default function Contents({ current, past }) {
     past.sol_keys.map(data => {
       let sol = data;
       let day = dateFormat(past[data].First_UTC);
-      let min = past[data].AT.min;
-      let max = past[data].AT.max;
-      console.log(past[data]);
-      return (
+      let min = past[data].AT.mn;
+      let max = past[data].AT.mx;
+      let content = (
         <div className="contents__past--container">
           <div className="contents__past--container-column">
-            <p></p>
+            <p className="day">Sol {sol}</p>
+            <p className="day">{day}</p>
           </div>
-          <div className="contents__past--container-column"></div>
+          <div className="contents__past--container-column">
+            <p>High: {max}</p>
+            <p>Low: {min}</p>
+          </div>
         </div>
       );
+      contents.push(content);
+      return contents;
     });
   }
 
@@ -37,16 +43,19 @@ export default function Contents({ current, past }) {
         <h1>A weather log for Martians.</h1>
         <h3>{`Season: ${season}`}</h3>
       </div>
+
       <div className="contents__current">
         <div className="contents__current--row">
           <h2>{`Sol ${sol}`}</h2>
-          <h2>{day}</h2>
+          <h2 id="current-day">{day}</h2>
         </div>
         <div className="contents__current--row">
-          <h2>High: {max}&deg;F</h2>
-          <h2>Low: {min}&deg;F</h2>
+          <h3>High: {max}&deg;F</h3>
+          <h3>Low: {min}&deg;F</h3>
         </div>
       </div>
+
+      <div className="contents__past">{contents}</div>
     </div>
   );
 }

@@ -1,0 +1,33 @@
+.contents {
+  &__container {
+    background-color: rgba(31, 27, 27, 0.4);
+    padding: 0.75rem 0.5rem;
+  }
+  &__current {
+    // color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 30vh;
+    &--row {
+      #current-day {
+        font-size: 1.25rem;
+      }
+    }
+  }
+  &__past {
+    text-align: center;
+    column-count: 2;
+    &--container {
+      background-color: rgba(0, 0, 0, 0.1);
+      margin-bottom: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      &-column {
+        .day {
+          font-size: 1.15rem;
+        }
+      }
+    }
+  }
+}

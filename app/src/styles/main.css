@@ -1,1 +1,45 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+.contents__container {
+  background-color: rgba(31, 27, 27, 0.4);
+  padding: 0.75rem 0.5rem;
+}
+
+.contents__current {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  height: 30vh;
+}
+
+.contents__current--row #current-day {
+  font-size: 1.25rem;
+}
+
+.contents__past {
+  text-align: center;
+  -webkit-column-count: 2;
+          column-count: 2;
+}
+
+.contents__past--container {
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-bottom: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.contents__past--container-column .day {
+  font-size: 1.15rem;
+}
+/*# sourceMappingURL=main.css.map */
