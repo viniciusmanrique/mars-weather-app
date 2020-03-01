@@ -42,6 +42,10 @@ body {
   padding: 0.75rem 2rem;
 }
 
+.contents__title {
+  font-size: 2.6rem;
+}
+
 .contents__current {
   font-family: robotoMonoBold;
   display: -webkit-box;
@@ -57,9 +61,21 @@ body {
   height: 30vh;
 }
 
+.contents__current--row {
+  text-align: center;
+}
+
+.contents__current--row #current-sol {
+  font-size: 1.75rem;
+}
+
 .contents__current--row #current-day {
   font-family: robotoMonoLight;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
+}
+
+.contents__current--row-temp {
+  margin: 1.7em 0;
 }
 
 .contents__season {
@@ -77,6 +93,9 @@ body {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   text-align: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 .contents__past--container {

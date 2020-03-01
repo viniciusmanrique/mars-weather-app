@@ -28,7 +28,7 @@ export default function BasicSlider() {
         shouldAutoplay: true,
         shouldDisplayButtons: false,
         autoplayDuration: 3000,
-        height: "160vh"
+        height: "140vh"
       }}
     >
       <OverlayContainer

@@ -42,18 +42,18 @@ export default function Contents({ current, past }) {
   return (
     <div className="contents">
       <div className="contents__container">
-        <h1>A weather log for Martians.</h1>
+        <h1 className="contents__title">A weather log for Martians.</h1>
         <h3 className="contents__season">{`Season: ${season}`}</h3>
       </div>
 
       <div className="contents__current">
         <div className="contents__current--row">
-          <h2>{`Sol ${sol}`}</h2>
+          <h2 id="current-sol">{`Sol ${sol}`}</h2>
           <h2 id="current-day">{day}</h2>
         </div>
         <div className="contents__current--row">
-          <h3>High: {max}&deg;F</h3>
-          <h3>Low: {min}&deg;F</h3>
+          <h3 className="contents__current--row-temp">High: {max}&deg;F</h3>
+          <h3 className="contents__current--row-temp">Low: {min}&deg;F</h3>
         </div>
       </div>
 
