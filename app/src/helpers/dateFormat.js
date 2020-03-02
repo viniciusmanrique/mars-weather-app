@@ -14,7 +14,7 @@ export default function dateFormat(input) {
     "November",
     "December"
   ];
-  let monthIndex = date.getMonth() + 1;
+  let monthIndex = date.getMonth();
   let dateNum = date.getDate();
 
   return `${month[monthIndex]} ${dateNum}`;
