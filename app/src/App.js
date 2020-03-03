@@ -23,7 +23,6 @@ class App extends Component {
     let data = dataObjects.data;
     //Get current sol (days on Mars)
     let sol_keys = data.sol_keys;
-    console.log(sol_keys);
     let currentSol = sol_keys[sol_keys.length - 1];
     currentData.sol = currentSol;
 
@@ -50,7 +49,6 @@ class App extends Component {
       currentData: currentData,
       pastData: pastData
     });
-    console.log(data, currentSol);
   }
   render() {
     return (
