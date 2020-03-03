@@ -69,6 +69,8 @@ body {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   text-align: center;
 }
 
@@ -83,10 +85,38 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 45vw;
-  margin-right: 0.5rem;
 }
 
 .contents__past--container-column .day {
   font-size: 1.15rem;
+}
+
+.hero-slider {
+  color: "#FFF";
+  margin: 0;
+  padding: 0;
+}
+
+.overlay-container {
+  display: "flex";
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: "column";
+          flex-direction: "column";
+  -webkit-box-align: "center";
+      -ms-flex-align: "center";
+          align-items: "center";
+  -webkit-box-pack: "center";
+      -ms-flex-pack: "center";
+          justify-content: "center";
+  width: "100%";
+  height: "100%";
+  background-color: "rgba(0, 0, 0, 0.33)";
+  text-align: "left";
+}
+
+.background {
+  background-attachment: "fixed";
+  background-position: "center top";
 }
 /*# sourceMappingURL=main.css.map */
